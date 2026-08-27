@@ -8,6 +8,7 @@
   </head>
   <body>
     <div id="app"></div>
+    <script>globalThis.clamp = (value, min, max) => Math.max(min, Math.min(max, value));</script>
     <script type="module" src="/src/main.ts"></script>
   </body>
 </html>
