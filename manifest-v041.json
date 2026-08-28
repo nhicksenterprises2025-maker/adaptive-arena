@@ -1,0 +1,9 @@
+{
+  "version": "0.4.1",
+  "build": "CLEARSKY-HF1",
+  "notes": "0.4.1 hotfix: fixes EADDRINUSE/stale-server launches. The launcher now clears old SHARDLINE servers, selects a free port, verifies the exact installed version before opening, and uses a SHA-256 verified update package.",
+  "package": {
+    "url": "https://raw.githubusercontent.com/nhicksenterprises2025-maker/adaptive-arena/shardline-updates-v041/shardline-channel/0.4.1/SHARDLINE_update_0.4.1.zip",
+    "sha256": "b5ea5e0e7eb133133c8f0ec55d50ef03d8ac08d60864fd1177b1613ebf0fb1c0"
+  }
+}
