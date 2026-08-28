@@ -1,0 +1,6 @@
+{
+  "version": "0.4.0",
+  "build": "CLEARSKY",
+  "notes": "0.4 CLEARSKY fixes the washed-out exposure, improves arena contrast, rebuilds the tactical operators with rounded human proportions, shrinks and details the first-person weapons, strengthens HUD readability, adds supply props and keeps TDM as the only mode.",
+  "files": []
+}
