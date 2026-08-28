@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1" />
+  <title>SHARDLINE — 3v3 Tactical TDM</title>
+  <link rel="stylesheet" href="/styles.css" />
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "https://cdn.jsdelivr.net/npm/three@0.180.0/build/three.module.js",
+      "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.180.0/examples/jsm/"
+    }
+  }
+  </script>
+</head>
+<body>
+  <div id="game"></div>
+  <div id="vignette"></div>
+  <div id="damageFlash"></div>
+
+  <section id="menu" class="panel hero-panel">
+    <div class="eyebrow">NHX COMPETITIVE LABS // 0.4 CLEARSKY</div>
+    <h1>SHARD<span>LINE</span></h1>
+    <p class="tagline">Fast 3v3 tactical gunfights in a bright stylized combat playground.</p>
+    <div class="mode-card">
+      <div><b>TEAM DEATHMATCH</b><small>3v3 // SUNSPIRE YARD // first team to 40</small></div>
+      <div class="live-pill">PLAYABLE</div>
+    </div>
+    <button id="aiBtn" class="sub-btn">AI // BALANCED</button>
+    <button id="playBtn">DEPLOY</button>
+    <div class="controls-grid">
+      <div><kbd>WASD</kbd><span>Move</span></div><div><kbd>SHIFT</kbd><span>Sprint</span></div>
+      <div><kbd>SPACE</kbd><span>Jump</span></div><div><kbd>C</kbd><span>Slide</span></div>
+      <div><kbd>LMB</kbd><span>Fire</span></div><div><kbd>RMB</kbd><span>ADS</span></div>
+      <div><kbd>1 2 3</kbd><span>Weapons</span></div><div><kbd>R</kbd><span>Reload</span></div>
+      <div><kbd>ESC</kbd><span>Release mouse</span></div>
+    </div>
+    <p id="netStatus">network: connecting…</p>
+  </section>
+
+  <div id="hud" class="hidden">
+    <div id="topHud">
+      <div class="teamScore blue"><span>COBALT</span><strong id="blueScore">0</strong></div>
+      <div id="modeHud"><small>TEAM DEATHMATCH</small><b id="timer">08:00</b><em>40 KILLS TO WIN</em></div>
+      <div class="teamScore red"><strong id="redScore">0</strong><span>CORAL</span></div>
+    </div>
+    <div id="killfeed"></div>
+    <div id="crosshair"><i></i><i></i><i></i><i></i><b></b></div>
+    <div id="hitmarker">×</div>
+    <div id="prompt"></div>
+    <div id="bottomLeft">
+      <div class="healthrow"><span>HEALTH</span><strong id="health">100</strong></div>
+      <div class="bar"><i id="healthBar"></i></div>
+      <small class="regen-note">AUTO-REGEN AFTER 4.3s</small>
+    </div>
+    <div id="weaponHud">
+      <small id="weaponName">VX-9 CARBINE</small>
+      <div><strong id="ammo">30</strong><span>/</span><b id="reserve">120</b></div>
+      <em id="statusText">READY</em>
+    </div>
+    <canvas id="minimap" width="170" height="170"></canvas>
+  </div>
+
+  <div id="respawn" class="hidden"><b>REDEPLOYING</b><span id="respawnTimer">2.0</span></div>
+  <div id="endScreen" class="panel hidden"><div class="eyebrow">MATCH COMPLETE</div><h2 id="resultTitle">VICTORY</h2><p id="resultStats"></p><button id="rematchBtn">RUN IT BACK</button></div>
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>
