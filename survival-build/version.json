@@ -1,0 +1,16 @@
+{
+  "version": "0.2.5",
+  "platform": "windows",
+  "released": "2026-08-29",
+  "packageSha256": "df306cea48c382fe04ec25ecd2dee54d82680f0d1172590ad49aa9858be120e5",
+  "chunks": [
+    "https://raw.githubusercontent.com/nhicksenterprises2025-maker/adaptive-arena/survival-build-updates/survival-build/part01.txt",
+    "https://raw.githubusercontent.com/nhicksenterprises2025-maker/adaptive-arena/survival-build-updates/survival-build/part02.txt",
+    "https://raw.githubusercontent.com/nhicksenterprises2025-maker/adaptive-arena/survival-build-updates/survival-build/part03.txt",
+    "https://raw.githubusercontent.com/nhicksenterprises2025-maker/adaptive-arena/survival-build-updates/survival-build/part04.txt",
+    "https://raw.githubusercontent.com/nhicksenterprises2025-maker/adaptive-arena/survival-build-updates/survival-build/part05.txt",
+    "https://raw.githubusercontent.com/nhicksenterprises2025-maker/adaptive-arena/survival-build-updates/survival-build/part06.txt",
+    "https://raw.githubusercontent.com/nhicksenterprises2025-maker/adaptive-arena/survival-build-updates/survival-build/part07.txt",
+    "https://raw.githubusercontent.com/nhicksenterprises2025-maker/adaptive-arena/survival-build-updates/survival-build/part08.txt"
+  ]
+}
