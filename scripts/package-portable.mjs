@@ -49,7 +49,7 @@ await build({
 const js = (await fs.readFile(path.join(bundleDir, 'arena.js'), 'utf8')).replace(/<\/script/gi, '<\\/script');
 // Use the stylesheet's existing local fallback fonts; do not package font files.
 const css = (await fs.readFile(path.join(bundleDir, 'arena.css'), 'utf8'))
-  .replace(/@import\s+(?:url\([^)]*\)|["'][^"']*["'])[^;]*;/gi, '')
+  .replace(/@import\s*(?:url\([^)]*\)|["'][^"']*["'])[^;]*;/gi, '')
   .replace(/<\/style/gi, '<\\/style');
 const html = `<!doctype html>\n<html lang="en">\n<head>\n<meta charset="UTF-8">\n<meta name="viewport" content="width=device-width,initial-scale=1">\n<meta name="theme-color" content="#07111f">\n<title>Adaptive Arena</title>\n<style>${css}</style>\n</head>\n<body>\n<div id="app"></div>\n<script>\nglobalThis.clamp = (value, min, max) => Math.max(min, Math.min(max, value));\n${js}\n</script>\n</body>\n</html>\n`;
 await fs.writeFile(path.join(out, 'PLAY_ADAPTIVE_ARENA.html'), html);
