@@ -1,0 +1,41 @@
+name: Portable game
+on:
+  push:
+    branches: [fix/portable-launcher]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  portable:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Install build and browser-test tools
+        run: npm install && npm install --no-save playwright@1.55.1
+      - name: Type-check and production build
+        run: npm run build
+      - name: Package standalone HTML and complete source
+        run: node scripts/package-portable.mjs
+      - name: Install test browser
+        run: npx playwright install --with-deps chromium
+      - name: Test file launch without server or internet
+        run: node scripts/test-portable.mjs
+      - name: Upload verified portable game
+        uses: actions/upload-artifact@v4
+        with:
+          name: Adaptive-Arena-Ready-To-Play
+          path: portable/Adaptive-Arena/
+          include-hidden-files: true
+          if-no-files-found: error
+          retention-days: 30
+      - name: Upload diagnostic evidence if a test fails
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: Adaptive-Arena-Portable-Diagnostics
+          path: portable/Adaptive-Arena/QA*
+          if-no-files-found: ignore
